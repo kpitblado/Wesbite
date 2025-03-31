@@ -16,8 +16,28 @@
   </header>
 
   <main>
-    <button onclick="startBubbleSort()">Start Bubble Sort</button>
+    <button id="startBtn" onclick="startBubbleSort()">▶️ Start Bubble Sort</button>
+    <button onclick="generateBars()">🔁 Reset</button>
+    <button onclick="stopSorting()" id="stopBtn">⛔ Stop</button>
     <div id="visualizer" class="bar-container"></div>
+  
+    <section class="explanation">
+      <h2>🔍 How Bubble Sort Works</h2>
+      <p>
+        Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, 
+        and swaps them if they are in the wrong order. This process is repeated until the list is fully sorted.
+      </p>
+      <p>
+        After each full pass through the list, the largest unsorted element "bubbles" up to its correct position — 
+        hence the name. Although it's not the most efficient algorithm for large datasets, it's a great way to 
+        understand the fundamentals of sorting.
+      </p>
+      <ul style="text-align: left; max-width: 600px; margin: 1rem auto;">
+        <li>✅ Repeatedly compares and swaps adjacent elements</li>
+        <li>✅ Slower on large data sets (Time complexity: O(n²))</li>
+        <li>✅ Easy to understand and visualize</li>
+      </ul>
+    </section>
   </main>
 
   <script src="scripts/visualize.js"></script>
