@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simulations – Kaspar</title>
+  <link rel="stylesheet" href="mysterious.css" />
+  <style>
+    .simulations-container {
+      max-width: 900px;
+      margin: 4rem auto;
+      background: rgba(20, 20, 20, 0.8);
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+    }
+
+    .simulations-container h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      letter-spacing: 1.5px;
+    }
+
+    .placeholder {
+      text-align: center;
+      font-size: 1.2rem;
+      font-style: italic;
+      opacity: 0.7;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="algorithms.html">Algorithms</a>
+    <a href="simulations.html">Simulations</a>
+  </nav>
+
+  <div class="simulations-container">
+    <h1>🧬 Buffon's Needle Simulation</h1>
+
+    <canvas id="needleCanvas" width="800" height="500" style="background-color:#111; border: 1px solid #640764;"></canvas>
+
+    <div style="text-align:center; margin-top:1rem;">
+      <button onclick="dropNeedles()">Drop Needles</button>
+      <p id="piEstimate" style="margin-top:1rem; font-size:1.2rem;"></p>
+    </div>
+  </div>
+
+  <!-- ✅ Always load scripts at the end of the body -->
+  <script src="scripts/buffon.js"></script>
+</body>
+</html>
