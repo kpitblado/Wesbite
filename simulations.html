@@ -33,26 +33,27 @@
   </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="algorithms.html">Algorithms</a>
-    <a href="simulations.html">Simulations</a>
-  </nav>
-
-  <div class="simulations-container">
-    <h1>🧬 Buffon's Needle Simulation</h1>
-
-    <canvas id="needleCanvas" width="800" height="500" style="background-color:#111; border: 1px solid #640764;"></canvas>
-
-    <div style="text-align:center; margin-top:1rem;">
-      <button onclick="dropNeedles()">Drop Needles</button>
-      <p id="piEstimate" style="margin-top:1rem; font-size:1.2rem;"></p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="algorithms.html">Algorithms</a>
+      <a href="simulations.html">Simulations</a>
+    </nav>
+  
+    <div class="simulations-container">
+      <h1>Buffon's Needle Simulation</h1>
+  
+      <canvas id="needleCanvas" width="800" height="500" style="background-color:#111; border: 1px solid #640764;"></canvas>
+  
+      <div class="controls">
+        <button onclick="dropNeedles()">Drop Needles</button>
+        <button onclick="resetSimulation()">Reset</button>
+      </div>
+  
+      <p id="piEstimate"></p>
     </div>
-  </div>
-
-  <!-- ✅ Always load scripts at the end of the body -->
-  <script src="scripts/buffon.js"></script>
-</body>
+  
+    <script src="scripts/buffon.js"></script>
+  </body>
 </html>

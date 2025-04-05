@@ -62,4 +62,19 @@ function dropNeedles(n = 100) {
   `;
 }
 
+function resetSimulation() {
+    // Clear canvas
+    ctx.clearRect(0, 0, width, height);
+    
+    // Reset counters
+    totalNeedles = 0;
+    crossCount = 0;
+    
+    // Clear π estimate text
+    document.getElementById("piEstimate").textContent = "";
+  
+    // Redraw the background lines
+    drawLines();
+  }
+
 drawLines();

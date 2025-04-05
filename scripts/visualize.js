@@ -2,34 +2,35 @@ let barArray = [];
 let isSorting = false;
 
 function generateBars(num = 20) {
-  const container = document.getElementById('visualizer');
-  container.innerHTML = '';
-  barArray = [];
-
-  const containerWidth = container.offsetWidth;
-  const barWidth = 20;
-  const spacing = 4;
-  const totalWidth = (barWidth + spacing) * num;
-  const offsetX = (containerWidth - totalWidth) / 2;
-
-  for (let i = 0; i < num; i++) {
-    const value = Math.floor(Math.random() * 100) + 1;
-
-    const bar = document.createElement('div');
-    bar.classList.add('bar');
-    bar.style.height = `${value * 2.5}px`;
-    bar.dataset.value = value;
-    bar.dataset.index = i;
-
-    const x = offsetX + i * (barWidth + spacing);
-    bar.style.transform = `translateX(${x}px)`;
-
-    barArray.push({ el: bar, value, x });
-    container.appendChild(bar);
-    isSorting = false;
+    const container = document.getElementById("visualizer");
+    container.innerHTML = '';
+    barArray = [];
+  
+    const barWidth = 20;
+    const spacing = 4;
+    const totalWidth = num * barWidth + (num - 1) * spacing;
+    const offsetX = (container.offsetWidth - totalWidth) / 2;
+  
+    for (let i = 0; i < num; i++) {
+      const value = Math.floor(Math.random() * 100) + 1;
+  
+      const bar = document.createElement("div");
+      bar.classList.add("bar");
+      bar.style.height = `${value * 2.5}px`;
+      bar.dataset.value = value;
+      bar.dataset.index = i;
+  
+      // Calculate position based on offset
+      const x = offsetX + i * (barWidth + spacing);
+      bar.style.transform = `translateX(${x}px)`;
+  
+      barArray.push({ el: bar, value, x });
+      container.appendChild(bar);
+    }
+  
     document.getElementById("startBtn").disabled = false;
+    isSorting = false;
   }
-}
 
 async function startBubbleSort() {
     const startBtn = document.getElementById("startBtn");

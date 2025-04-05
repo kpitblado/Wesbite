@@ -1,46 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Algorithm Visualizer - Bubble Sort</title>
-  <link rel="stylesheet" href="mysterious.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bubble Sort – Algorithm Visualizer 005fa3</title>
+  <link rel="stylesheet" href="mysterious.css" />
+  <style>
+    .algo-container {
+      max-width: 900px;
+      margin: 4rem auto;
+      background: rgba(20, 20, 20, 0.8);
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+    }
+
+    .algo-container h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 2px;
+    }
+
+    .controls button:hover {
+      background-color: #b8860b;
+    }
+
+    .explanation {
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .explanation h2 {
+      color: #b8860b;
+      margin-bottom: 1rem;
+    }
+
+    .explanation ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .explanation li {
+      margin: 0.5rem 0;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="algorithms.html">Algorithms</a>
-        <a href="simulations.html">Simulations</a>
-    </nav>
-  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="algorithms.html">Algorithms</a>
+    <a href="simulations.html">Simulations</a>
+  </nav>
 
-  <main>
+  <div class="algo-container">
     <h1>Bubble Sort Visualizer</h1>
-    <button id="startBtn" onclick="startBubbleSort()">▶️ Start Bubble Sort</button>
-    <button onclick="generateBars()">🔁 Reset</button>
-    <button onclick="stopSorting()" id="stopBtn">⛔ Stop</button>
+
+    <div class="controls">
+      <button id="startBtn" onclick="startBubbleSort()">Start</button>
+      <button onclick="generateBars()">Reset</button>
+      <button onclick="stopSorting()" id="stopBtn">Stop</button>
+    </div>
+
     <div id="visualizer" class="bar-container"></div>
-  
+
     <section class="explanation">
-      <h2>🔍 How Bubble Sort Works</h2>
+      <h2>How Bubble Sort Works</h2>
       <p>
-        Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, 
+        Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements,
         and swaps them if they are in the wrong order. This process is repeated until the list is fully sorted.
       </p>
       <p>
-        After each full pass through the list, the largest unsorted element "bubbles" up to its correct position — 
-        hence the name. Although it's not the most efficient algorithm for large datasets, it's a great way to 
+        After each full pass through the list, the largest unsorted element "bubbles" up to its correct position —
+        hence the name. Although it's not the most efficient algorithm for large datasets, it's a great way to
         understand the fundamentals of sorting.
       </p>
-      <ul style="text-align: left; max-width: 600px; margin: 1rem auto;">
+      <ul>
         <li>✅ Repeatedly compares and swaps adjacent elements</li>
         <li>✅ Slower on large data sets (Time complexity: O(n²))</li>
         <li>✅ Easy to understand and visualize</li>
       </ul>
     </section>
-  </main>
+  </div>
 
   <script src="scripts/visualize.js"></script>
 </body>
